@@ -758,13 +758,13 @@ export default function ClientPortal() {
           </div>
         </div>
 
-        {/* Admin link */}
+        {/* Switch view link */}
         <div className="text-center pb-4">
           <Link
             to="/"
             className="text-xs text-text-muted hover:text-accent transition-colors inline-flex items-center gap-1"
           >
-            Admin View <ArrowRight className="w-3 h-3" />
+            Switch View <ArrowRight className="w-3 h-3" />
           </Link>
         </div>
       </main>
