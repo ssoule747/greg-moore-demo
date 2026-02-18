@@ -27,7 +27,6 @@ import ProgressBar from '../components/ProgressBar';
 const venturaProject =
   projects.find((p) => p.name.toLowerCase().includes('ventura')) || projects[0];
 
-const activeCategories: BudgetCategory[] = bloemhofBudget.filter((c: BudgetCategory) => c.actual > 0);
 const allCategories: BudgetCategory[] = bloemhofBudget;
 
 const totalEstimated = allCategories.reduce((sum: number, c: BudgetCategory) => sum + c.estimated, 0);
