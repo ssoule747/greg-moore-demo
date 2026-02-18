@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   CheckCircle,
   Circle,
@@ -178,6 +178,7 @@ export default function ClientPortal() {
   const [coTitle, setCoTitle] = useState('');
   const [coDescription, setCoDescription] = useState('');
   const [coSubmitted, setCoSubmitted] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-bg-secondary">
@@ -191,9 +192,13 @@ export default function ClientPortal() {
             <h1 className="text-lg font-serif font-semibold text-text-primary">
               Ventura Remodel
             </h1>
-            <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center">
+            <button
+              onClick={() => navigate('/')}
+              className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center hover:bg-accent/30 transition-colors"
+              title="Switch view"
+            >
               <span className="text-accent font-semibold text-sm">R&T</span>
-            </div>
+            </button>
           </div>
 
           {/* Tab navigation */}

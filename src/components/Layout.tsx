@@ -1,4 +1,4 @@
-import { Outlet, NavLink } from "react-router-dom";
+import { Outlet, NavLink, useNavigate } from "react-router-dom";
 import {
   LayoutDashboard,
   FolderKanban,
@@ -15,6 +15,7 @@ const navItems = [
 ];
 
 export default function Layout() {
+  const navigate = useNavigate();
   return (
     <div className="flex h-screen overflow-hidden bg-bg-primary">
       {/* Sidebar */}
@@ -102,17 +103,21 @@ export default function Layout() {
             </button>
 
             {/* User */}
-            <div className="flex items-center gap-3">
+            <button
+              onClick={() => navigate("/")}
+              className="flex items-center gap-3 rounded-lg px-2 py-1.5 transition-colors hover:bg-bg-secondary"
+              title="Switch view"
+            >
               <div className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-xs font-bold text-white">
                 GM
               </div>
-              <div className="hidden sm:block">
+              <div className="hidden sm:block text-left">
                 <p className="text-sm font-medium leading-tight text-text-primary">
                   Greg Moore
                 </p>
                 <p className="text-xs text-text-muted">Owner</p>
               </div>
-            </div>
+            </button>
           </div>
         </header>
 
